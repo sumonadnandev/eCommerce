@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All category post</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+   <!-- mobile- nav -->
+   <link rel="stylesheet" href="fonts/icomoon/style.css"> 
+    
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.min.css" integrity="sha512-Ja1oxinMmERBeokXx+nbQVVXeNX771tnUSWWOK4mGIbDAvMrWcRsiteRyTP2rgdmF8bwjLdEJADIwdMXQA5ccg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+</head>
+
+<body>
+<section class="top-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <div class="site-logo">
+                <a href="index.html" class="font-weight-bold text-white">
+                  <img src="assets/images/logo-nujum.png" class="img-fluid">
+                </a>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item px-2">
+                    <a class="nav-link active" aria-current="page" href="#">جميع الاعلانات</a>
+                  </li>
+                  <li class="nav-item nav-swithcher px-2">
+                    <a class="nav-link active" aria-current="page" href="#">English</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item px-2">
+                    <a class="nav-link active chat" aria-current="page" href="#"><i class="fa-solid fa-comments"></i>محادثة</a>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" class="btn login" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa-solid fa-user"></i>تسجيل الدخول</button>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="post.html">
+                      <button type="button" class="btn btn-color">انشر إعلانك</button>
+                    </a>
+                  </li>
+                  
+                </ul>
+            <img src="assets/images/moon.png" alt="" id="icon">
+
+                
+              </div>
+            </div>
+          </nav>
+</section>
+
+<!-- ======modal-login=========== -->
+<div class="modal modal-lg fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">تسجيل الدخول</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left-login">
+              <h1>مرحبا بكم في بيكروي</h1>
+              <div class="login-info">تسجيل الدخول لإدارة حسابك.</div>
+              <ul class="cards">
+                <li class="d-flex">
+                  <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+                  <p>ابدأ في نشر الإعلانات الخاصة بك.</p>
+                </li>
+                <li class="d-flex">
+                  <img src="assets/images/magnifying-glass.svg" alt="" style="height: 30px; width: 30px;">
+                  <p>اجعل الإعلانات مفضلة واعرضها لاحقًا ..</p>
+                </li>
+                <li class="d-flex">
+                  <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+                  <p>عرض وإدارة إعلاناتك على راحتك.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ---login form------ -->
+          <div class="col-md-6">
+            <form id="login" onsubmit="process(event)">
+              <p>أدخل رقم هاتفك:</p>
+              <input id="phone" type="tel" name="phone"  class="form-control" style="width: 142%;"/>
+              <input type="submit" class="btn btn-success form-control mt-3" value="Continue" />
+            </form>
+            <div class="extra">أو</div>
+            <div class="social">
+              <a href="#" class="form-control d-flex google">
+                <img src="assets/images/google.svg" alt="" style="height: 30px; width: 30px;">
+                <h1>تواصل مع جوجل</h1>
+              </a>
+              <a href="#" class="form-control d-flex facebook">
+                <img src="assets/images/facebook.svg" alt="" style="height: 30px; width: 30px;">
+                <h1>تواصل مع الفيسبوك</h1>
+              </a>
+              <a href="#" class="form-control d-flex email">
+                <img src="assets/images/message.svg" alt="" style="height: 30px; width: 30px;">
+                <h1>تواصل مع البريد الإلكتروني</h1>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!------------------------------------------ modal end--------------------------------- -->
+
+
+<!-- mobile nav section start -->
+<div class="site-mobile-menu site-navbar-target">
+  <div class="site-mobile-menu-header">
+    <div class="site-mobile-menu-close mt-3">
+      <span class="icon-close2 js-menu-toggle"></span>
+    </div>
+  </div>
+  <div class="site-mobile-menu-body"></div>
+</div>
+
+<section class="site-navbar site-navbar-target py-2" role="banner">
+  <div class="container">
+    <div class="row align-items-center position-relative">
+
+      <div class="col-1">
+        <span class="d-inline-block d-lg-block"><a href="#" class="text-black site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
+
+        <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav ml-auto ">
+            <li class="active"><a href="all-category.html" class="nav-link nave-one"><i class="fa-solid fa-tag"></i>جميع الإعلانات في نجوم</a></li>
+            <li><a href="login.html" class="nav-link"><i class="fa-solid fa-user"></i>تسجيل الدخول</a></li>
+            <li><a href="" class="nav-link nave-two"><i class="fa-solid fa-gear"></i>إعدادات</a></li>
+            <li><a href="" class="nav-link"><i class="fa-solid fa-shield-halved"></i>ابق آمنًا</a></li>
+            <li><a href="" class="nav-link"><i class="fa-solid fa-circle-question"></i>التعليمات</a></li>
+            <li><a href="" class="nav-link"><i class="fa-solid fa-coins"></i>كيف تبيع بسرعة</a></li>
+            <li><a href="" class="nav-link nave-three"><i class="fa-solid fa-ellipsis"></i>أكثر</a></li>
+            <li class="nav-item nav-swithcher-1 text-center px-2">
+              <a class="nav-link active" aria-current="page" href="#">English</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-8">
+        <div class="site-logo">
+          <a href="index.html" class="font-weight-bold text-white">
+            <img src="assets/images/logo-nujum.png" class="img-fluid">
+          </a>
+        </div>
+
+        
+      </div>
+      <div class="col-3">
+        <div class="chat-login-icon text-right">
+          <i class="fa-solid fa-comments"></i>
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+<!--Mobile nav add section end  -->      
+
+
+<!-- All category section start from here -->
+<section class="cat-mobile">
+    <div class="container">
+        <div class="row mob-upper shadow-lg">
+            <div class="col-md-4">
+                <div class="mob-upper-left">
+                   <button>
+                    <h3><i class="fa-solid fa-location-dot"></i>اختر موقعا</h3>
+                   </button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mob-upper-left">
+                   <button>
+                    <h3><i class="fa-solid fa-tag"></i>جوالات</h3>
+                   </button>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="search-form-1 text-center ">
+                    <form action="" method="post" class="d-flex search-btn">
+                      <input type="search" autocomplete="off" aria-label="search input" class="search-input" placeholder="ما الذي تبحث عنه؟">
+                      <div class="search-btn">
+                        <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      </div>
+                    </form>
+                  </div>
+            </div>
+        </div>
+        <div class="row mob-all">
+            <div class="col-md-4 p-4 mob-all-left">
+                <!-- select option -->
+                <div class="wrapper">
+                    <h6>ترتيب النتائج حسب</h6>
+                    <div class="select-btn">
+                      <span>حدد حسب السعر والتاريخ</span>
+                      <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="content">
+                      <div class="search">
+                        <input spellcheck="false" type="text" placeholder="يبحث">
+                      </div>
+                      <ul class="options"></ul>
+                    </div>
+                </div>
+                 <!-- filter -->
+                <div class="filter pt-4 pb-2">
+                    <h6>تصفية الإعلانات حسب</h6>
+                    <div class="filter-content d-block">
+                        <input type="radio" id="" name="fav_language" value="URGENT"><span id="">عاجل</span>
+                        <input type="radio" id="" name="fav_language" value="FEATURE"><span>سمات</span>
+                    </div>
+                </div>
+                <hr>
+                <!-- poster -->
+                <div class="poster pt-3 pb-2">
+                    <h6>اكتب ملصق</h6>
+                    <div class="poster-content d-block">
+                        <select name="" id="">
+                            <option value="">الجميع</option>
+                            <option value="">عضو</option>
+                            <option value="">التجار المعتمدون</option>
+                            <option value="">غير الأعضاء</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- category -->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          فئة
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <a href="#" class="cat-content-link-1">
+                                <div class="row">
+                                  <div class="col-md-11">
+                                    <div class="cat-icon-content-1">
+                                       <p>جميع الفئات</p>
+                                       <ul>
+                                        <li><a href="#"><i class="fa-solid fa-mobile-screen-button" style="color: #000000;"></i>جوالات</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-tv" style="color: #000000;"></i>إلكترونيات</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-car" style="color: #008040;"></i>مركبات</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-house" style="color: #800000;"></i>المنزل والمعيشة</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-house" style="color: #800000;"></i>ملكية</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-dog" style="color: #800000;"></i>الحيوانات الأليفة والحيوانات</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-shirt" style="color: #004000;"></i>جمال الموضة النسائية</a></li>
+                                        
+                                    </ul>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+
+                  <!-- Location -->
+                  <div class="accordion" id="location">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                          Location
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#location">
+                        <div class="accordion-body">
+                          <div class="location-content">
+                            <h3>All of Saudi Arabia</h3>
+                            <ul>
+                                <li><a href="#"></a>الرياض</li>
+                                <li><a href="#"></a>مكة المكرمة</li>
+                                <li><a href="#"></a>جدة</li>
+                                <li><a href="#"></a>تبوك</li>
+                                <li><a href="#"></a>الدمام</li>
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button second collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                          أظهر المزيد
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <ul class="p-0">
+                                                <li><a href="#"></a>الرياض</li>
+                                                <li><a href="#"></a>جدة</li>
+                                                <li><a href="#"></a>جدة</li>
+                                            </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-8 px-4">
+                <div class="cate-name">
+                    <ul class="d-flex pt-4">
+                        <li><a href="#">بيت<i class="fa-solid fa-angle-right"></i></a></li>
+                        <li><a href="#">جميع اعلانات المملكة العربية السعودية<i class="fa-solid fa-angle-right"></i></a></li>
+                    </ul>
+                    <h3>شراء ، بيع ، إيجار أو العثور على أي شيء في المملكة العربية السعودية</h3>
+                    <p>عرض 1-25 من 285،218 إعلان</p>
+                </div>
+                <div class="all-cat-product">
+                    <!-- product carousel -->
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="assets/images/slider-1.jpg" class="d-block w-100 h-60" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h5>متحرك</h5>
+                              <p>سامسونج s22 الترا</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="assets/images/slider-2.jpg" class="d-block w-100 h-60" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h5>متحرك</h5>
+                              <p>سامسونج s22 الترا</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="assets/images/slider-3.jpg" class="d-block w-100 h-60" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h5>متحرك</h5>
+                              <p>سامسونج s22 الترا</p>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- end carousel -->
+
+                    <!-- All Product -->
+                    <div class="products">
+                        <a href="single-post.html">
+                            <div class="row products-content">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4 product-img">
+                                   <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-8 product-details">
+                                    <h2>بيع فلاش / 8 جيجا رام كور سامسونج تي في</h2>
+                                    <p>ماكا ، أجهزة كمبيوتر سطح المكتب</p>
+                                    <span>Tk 25000</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products">
+                        <a href="single-post.html">
+                            <div class="row products-content">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4 product-img">
+                                   <img src="assets/images/product-2.webp" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-8 product-details">
+                                    <h2>بيع فلاش / 8 جيجا رام كور 120 جيجا شاشة سامسونج 19 بوصة LED</h2>
+                                    <p>جدة، عقارات</p>
+                                    <span>Tk 250000</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products">
+                      <a href="single-post.html">
+                          <div class="row products-content">
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-4 product-img">
+                                 <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                              </div>
+                              <div class="col-lg-8 col-md-8 col-sm-8 col-8 product-details">
+                                  <h2>بيع فلاش / 8 جيجا رام كور سامسونج تي في</h2>
+                                  <p>ماكا ، أجهزة كمبيوتر سطح المكتب</p>
+                                  <span>Tk 25000</span>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="products">
+                    <a href="single-post.html">
+                        <div class="row products-content">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-4 product-img">
+                               <img src="assets/images/product-2.webp" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-8 product-details">
+                                <h2>بيع فلاش / 8 جيجا رام كور 120 جيجا شاشة سامسونج 19 بوصة LED</h2>
+                                <p>جدة، عقارات</p>
+                                <span>Tk 250000</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                    <nav aria-label="Page navigation example" style="float: right;">
+                      <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- All category section start from here -->
+
+
+<!-- all ads  as slider start from here-->
+<Section class="all-ads-slider pt-5 shadow-lg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <div class="ads-title">
+              <h3>الإعلانات الإلكترونية</h3>
+            </div>
+            <div class="ads-content">
+              <ul>
+                <li><a href="#">هواتف محمولة في السعودية</a></li>
+                <li><a href="#">كاميرات في السعودية</a></li>
+                <li><a href="#">أجهزة الكمبيوتر المحمولة في بنغلاديش</a></li>
+                <li><a href="#">تلفزيونات في السعودية</a></li>
+                <li><a href="#">مكيفات في السعودية</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ads-title">
+              <h3>إعلانات المركبات</h3>
+            </div>
+            <div class="ads-content">
+              <ul>
+                <li><a href="#">سيارات في السعودية</a></li>
+                <li><a href="#">دراجات نارية في السعودية</a></li>
+                <li><a href="#">دراجات هوائية في السعودية</a></li>
+                <li><a href="#">شاحنات في السعودية</a></li>
+                <li><a href="#">شاحنات في السعودية</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ads-title">
+              <h3>إعلانات الممتلكات</h3>
+            </div>
+            <div class="ads-content">
+              <ul>
+                <li><a href="#">منازل للبيع في السعودية</a></li>
+                <li><a href="#">أراضي في السعودية</a></li>
+                <li><a href="#">شقق للبيع في السعودية</a></li>
+                <li><a href="#">عقارات تجارية للبيع في السعودية</a></li>
+                <li><a href="#">تأجير منزل في المملكة العربية السعودية</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ads-title">
+              <h3>تتجه الإعلانات</h3>
+            </div>
+            <div class="ads-content">
+              <ul>
+                <li><a href="#">أثاث في السعودية</a></li>
+                <li><a href="#">حيوانات أليفة في السعودية</a></li>
+                <li><a href="#">آلات موسيقية في السعودية</a></li>
+                <li><a href="#">أدوات الصناعة في المملكة العربية السعودية</a></li>
+                <li><a href="#">ساعات في السعودية</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ads-title">
+              <h3>أعضاء</h3>
+            </div>
+            <div class="ads-content">
+              <ul>
+                <li><a href="#">فريندز كمبيوتر</a></li>
+                <li><a href="#">متجر الهاتف الأصلي الموثوق به</a></li>
+                <li><a href="#">متجر تكنولوجيا المعلومات</a></li>
+                <li><a href="#">عالم التكنولوجيا شوفو</a></li>
+                <li><a href="#">آر كمبيوتر بلس</a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</Section>
+
+
+<!-- all ads  as slider start from here-->
+
+
+
+
+
+
+
+
+
+
+    
+
+<!-- footer section code start from here -->
+<footer class="footer">
+  <div class="container">
+   <div class="row line">
+     <div class="col-md-4 footer-1">
+       <h2>قم بتنزيل تطبيقنا</h2>
+         <div class="footer-1-img d-flex">
+           <a href="#">
+             <img src="assets/images/google.png" alt="">
+           </a>
+           <a href="#">
+             <img src="assets/images/apple.png" alt="">
+           </a>
+         </div>
+         <div class="social">
+           <h2 class="pt-3">متصل مع</h2>
+           <a href="#"><i class="fa-brands fa-square-facebook"></i>اعجب بنا على الفيسبوك</a>
+         </div>
+         <div>
+           <h2 class="pt-3">دولة أخرى</h2>
+           <a href="#"><p>Srilanka</p></a>
+         </div>
+     </div>
+     <div class="col-md-2">
+       <div class="more">
+         <h2>المزيد من بيكروي</h2>
+         <ul class="content1">
+           <li><a href="#">بيع سريع</a></li>
+           <li><a href="#">عضوية</a></li>
+           <li><a href="#">إعلانات البانر</a></li>
+           <li><a href="#">الترقيات الإعلانية</a></li>
+           <li><a href="#">حلول التوظيف</a></li>
+           <li><a href="#">دليل الدراجات</a></li>
+         </ul>
+       </div>
+     </div>
+     <div class="col-md-2">
+       <div class="more">
+         <h2>ساعد لدعم</h2>
+         <ul class="content1">
+           <li><a href="#">التعليمات</a></li>
+           <li><a href="#">ابق آمنًا</a></li>
+           <li><a href="#">اتصل بنا</a></li>
+         </ul>
+       </div>
+     </div>
+     <div class="col-md-2">
+       <div class="more">
+         <h2>اتبع بيكروي</h2>
+         <ul class="content1">
+           <li><a href="#">مدونة</a></li>
+           <li><a href="#">فيسبوك</a></li>
+           <li><a href="#">تويتر</a></li>
+           <li><a href="#">الترقيات الإعلانية</a></li>
+           <li><a href="#">موقع YouTube</a></li>
+         </ul>
+       </div>
+     </div>
+     <div class="col-md-2">
+       <div class="more">
+         <h2>حول بكروي </h2>
+         <ul class="content1">
+           <li><a href="#">معلومات عنا</a></li>
+           <li><a href="#">وظائف</a></li>
+           <li><a href="#">الأحكام والشروط</a></li>
+           <li><a href="#">سياسة الخصوصية</a></li>
+           <li><a href="#">خريطة الموقع</a></li>
+         </ul>
+       </div>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-md-12 pt-2">
+       جميع الحقوق محفوظة حقوق التأليف والنشر &copy; <a href="https://nujum.dev/" target="_blank">نجوم لتقنية المعلومات</a> 
+     </div>
+   </div>
+  </div>
+</footer>
+<!-- footer section code end from here -->
+ 
+     
+ 
+ 
+<script src="assets/js/bootstrap.bundle.js"></script>
+<!-- javascript -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
+<!-- for mobile nav -->
+<!-- <script src="assets/js/jquery-3.3.1.min.js"></script> -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+
+<!-- main js -->
+<script src="assets/js/main.js"></script>
+<!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+ 
+ 
+     <script>
+       const phoneInputField = document.querySelector("#phone");
+       const phoneInput = window.intlTelInput(phoneInputField, {
+         utilsScript:
+           "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+       });
+     </script>
+
+
+<script>
+    const wrapper = document.querySelector(".wrapper"),
+selectBtn = wrapper.querySelector(".select-btn"),
+searchInp = wrapper.querySelector("input"),
+options = wrapper.querySelector(".options");
+
+let countries = ["Date:Newest on top","Date:Oldest on top","Price:High to Low","Price:Low to High"]
+
+function addCountry(selectedCountry) {
+    options.innerHTML = "";
+    countries.forEach(country => {
+        let isSelected = country == selectedCountry ? "selected" : "";
+        let li = `<li onclick="updateName(this)" class="${isSelected}">${country}</li>`;
+        options.insertAdjacentHTML("beforeend", li);
+    });
+}
+addCountry();
+
+function updateName(selectedLi) {
+    searchInp.value = "";
+    addCountry(selectedLi.innerText);
+    wrapper.classList.remove("active");
+    selectBtn.firstElementChild.innerText = selectedLi.innerText;
+}
+
+searchInp.addEventListener("keyup", () => {
+    let arr = [];
+    let searchWord = searchInp.value.toLowerCase();
+    arr = countries.filter(data => {
+        return data.toLowerCase().startsWith(searchWord);
+    }).map(data => {
+        let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
+        return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
+    }).join("");
+    options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">Oops! Country not found</p>`;
+});
+
+selectBtn.addEventListener("click", () => wrapper.classList.toggle("active"));
+</script>
+
+
+
+<!-- owl carousel -->
+<script>
+  $('.owl-carousel').owlCarousel({
+        loop:false,
+        margin:10,
+        responsiveClass:true,
+        margin:10,
+        autoplay:false,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+          0:{
+              items:2,
+              nav:true,
+              
+          },
+          600:{
+              items:4,
+              nav:false
+          },
+          1000:{
+              items:4,
+              nav:true,
+              loop:false
+          }
+        }
+        })
+ </script>
+
+
+<!-- mode switcher -->
+<script>
+  var icon =document.getElementById("icon");
+  icon.onclick =function(){
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+      icon.src ="assets/images/sun.png";
+      body.style.transition = '2s';
+    }else{
+      icon.src ="assets/images/moon.png";
+      body.style.transition = '2s';
+    }
+  }
+</script>
+ </body>
+ </html>

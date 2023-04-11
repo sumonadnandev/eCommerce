@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member seller</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- mobile- nav -->
+   <link rel="stylesheet" href="fonts/icomoon/style.css"> 
+  <!-- Owl Stylesheets -->
+  <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.theme.default.min.css">
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.min.css" integrity="sha512-Ja1oxinMmERBeokXx+nbQVVXeNX771tnUSWWOK4mGIbDAvMrWcRsiteRyTP2rgdmF8bwjLdEJADIwdMXQA5ccg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+</head>
+
+<body>
+  <section class="top-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="site-logo">
+            <a href="index.html" class="font-weight-bold text-white">
+              <img src="assets/images/logo-nujum.png" class="img-fluid">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a class="nav-link active" aria-current="page" href="#">جميع الاعلانات</a>
+              </li>
+              <li class="nav-item nav-swithcher px-2">
+                <a class="nav-link active" aria-current="page" href="#">English</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a class="nav-link active chat" aria-current="page" href="#"><i class="fa-solid fa-comments"></i>محادثة</a>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn login" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa-solid fa-user"></i>تسجيل الدخول</button>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="post.html">
+                  <button type="button" class="btn btn-color">انشر إعلانك</button>
+                </a>
+              </li>
+              
+            </ul>
+        <img src="assets/images/moon.png" alt="" id="icon">
+
+            
+          </div>
+        </div>
+      </nav>
+</section>
+
+<!-- ======modal-login=========== -->
+<div class="modal modal-lg fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">تسجيل الدخول</h5>
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="left-login">
+          <h1>مرحبا بكم في بيكروي</h1>
+          <div class="login-info">تسجيل الدخول لإدارة حسابك.</div>
+          <ul class="cards">
+            <li class="d-flex">
+              <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+              <p>ابدأ في نشر الإعلانات الخاصة بك.</p>
+            </li>
+            <li class="d-flex">
+              <img src="assets/images/magnifying-glass.svg" alt="" style="height: 30px; width: 30px;">
+              <p>اجعل الإعلانات مفضلة واعرضها لاحقًا ..</p>
+            </li>
+            <li class="d-flex">
+              <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+              <p>عرض وإدارة إعلاناتك على راحتك.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ---login form------ -->
+      <div class="col-md-6">
+        <form id="login" onsubmit="process(event)">
+          <p>أدخل رقم هاتفك:</p>
+          <input id="phone" type="tel" name="phone"  class="form-control" style="width: 142%;"/>
+          <input type="submit" class="btn btn-success form-control mt-3" value="Continue" />
+        </form>
+        <div class="extra">أو</div>
+        <div class="social">
+          <a href="#" class="form-control d-flex google">
+            <img src="assets/images/google.svg" alt="" style="height: 30px; width: 30px;">
+            <h1>تواصل مع جوجل</h1>
+          </a>
+          <a href="#" class="form-control d-flex facebook">
+            <img src="assets/images/facebook.svg" alt="" style="height: 30px; width: 30px;">
+            <h1>تواصل مع الفيسبوك</h1>
+          </a>
+          <a href="#" class="form-control d-flex email">
+            <img src="assets/images/message.svg" alt="" style="height: 30px; width: 30px;">
+            <h1>تواصل مع البريد الإلكتروني</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+<!------------------------------------------ modal end--------------------------------- -->
+
+
+<!-- mobile nav section start -->
+<div class="site-mobile-menu site-navbar-target">
+<div class="site-mobile-menu-header">
+<div class="site-mobile-menu-close mt-3">
+  <span class="icon-close2 js-menu-toggle"></span>
+</div>
+</div>
+<div class="site-mobile-menu-body"></div>
+</div>
+
+<section class="site-navbar site-navbar-target py-2" role="banner">
+<div class="container">
+<div class="row align-items-center position-relative">
+
+  <div class="col-1">
+    <span class="d-inline-block d-lg-block"><a href="#" class="text-black site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
+
+    <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
+      <ul class="site-menu main-menu js-clone-nav ml-auto ">
+        <li class="active"><a href="all-category.html" class="nav-link nave-one"><i class="fa-solid fa-tag"></i>جميع الإعلانات في نجوم</a></li>
+        <li><a href="login.html" class="nav-link"><i class="fa-solid fa-user"></i>تسجيل الدخول</a></li>
+        <li><a href="" class="nav-link nave-two"><i class="fa-solid fa-gear"></i>إعدادات</a></li>
+        <li><a href="" class="nav-link"><i class="fa-solid fa-shield-halved"></i>ابق آمنًا</a></li>
+        <li><a href="" class="nav-link"><i class="fa-solid fa-circle-question"></i>التعليمات</a></li>
+        <li><a href="" class="nav-link"><i class="fa-solid fa-coins"></i>كيف تبيع بسرعة</a></li>
+        <li><a href="" class="nav-link nave-three"><i class="fa-solid fa-ellipsis"></i>أكثر</a></li>
+        <li class="nav-item nav-swithcher-1 text-center px-2">
+          <a class="nav-link active" aria-current="page" href="#">English</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="col-8">
+    <div class="site-logo">
+      <a href="index.html" class="font-weight-bold text-white">
+        <img src="assets/images/logo-nujum.png" class="img-fluid">
+      </a>
+    </div>
+
+    
+  </div>
+  <div class="col-3">
+    <div class="chat-login-icon text-right">
+      <i class="fa-solid fa-comments"></i>
+      <i class="fa-solid fa-user"></i>
+    </div>
+  </div>
+
+  
+</div>
+</div>
+</section>
+
+<!--Mobile nav add section end  -->  
+
+    <!-- member section section start form here -->
+    <section class="member-seller">
+       <div class="container bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="member-banner">
+                   <div class="profile-pic">
+                      <img src="assets/images/brand.webp" alt="" class="img-fluid" style="height: 150px; width: 200px;">
+                   </div>
+                </div>
+            </div>
+        </div>  
+        <div class="row p-3 member-content">
+            <div class="col-md-4 member-seller-left">
+               <div class="member-details">
+                <h1>رانجبور موبايل</h1>
+                <span>هاتف جديد باهظ الثمن مقابل نقود أقل</span>
+                <div class="badge-member d-flex">
+                    <div class="badge-member-1">
+                        <i class="fa-solid fa-star"></i>
+                        <a href="member-seller.html"><span>عضو</span></a>
+                    </div>
+                    <div class="badge-seller-1">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <a href="member-seller.html"><span>بائع معتمد</span></a>
+                    </div>
+                </div>
+                <div class="member-activity mt-2">
+                    <span>عضو منذ نوفمبر 2020</span>
+                </div>
+               </div>
+
+               <div class="time">
+                <p>يفتح يغلق 10:00 صباحا - 10:00 مساءا</p>
+                <a href="#">مشاهدة جميع المواعيد</a>
+               </div>
+               <div class="number">
+                <div class="row call">
+                    <div class="col-md-1">
+                      <i class="fa-solid fa-square-phone-flip fa-shake"></i>
+                    </div>
+                    <div class="col-md-11 call-number">
+                      017xxxxxxxxxxxxxx
+                    </div>
+                  </div>
+               </div>
+               <div class="emails">
+                <div class="row call">
+                    <div class="col-md-1">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="col-md-11 emails-content">
+                      ارسل بريد الكتروني
+                    </div>
+                  </div>
+               </div>
+               <div class="location">
+                <div class="row call">
+                    <div class="col-md-1">
+                        <i class="fa-solid fa-location-dot fa-bounce"></i>
+                    </div>
+                    <div class="col-md-11 location-content">
+                      15 (الطابق الأرضي) Moin Plaza (مقابل سوق Chalek) فندق Shapla Chatwar Grand Mor ، Rangpur.
+                    </div>
+                  </div>
+               </div>
+               <div class="descriptiom">
+                <h3>حول هذا المتجر</h3>
+                <p>بسم الله الرحمن الرحيم
+                  أنت مرحب بك بحرارة في RANGPUR MOBILE.
+                  لدينا الكثير من الهواتف الذكية بسعر معقول. نحن</p>
+                     <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              أظهر المزيد
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>الهواتف الذكية بسعر معقول. نحن نقدم أرخص سعر في السوق بأكمله. لذلك لا تتأخر عن المجيء والاستيلاء على هاتفك المفضل. نحن نؤمن بالخدمة الشخصية وبقضاء وقت إضافي مع كل عميل على حدة لضمان أفضل النتائج.
+                                  نحن نبذل قصارى جهدنا لخدمتك. رضاك مضمون.
+                                  هدفنا هو تزويد العميل بأقل سعر وأفضل جودة. الجودة هي الوعد الأول لعملائنا.
+                                 إذا كنت ترغب في شراء أي هاتف ذكي ، فلا تتردد في الاتصال والحصول على الهاتف الذي تريده بسعر موثوق.
+                                 شكرًا لك</p>
+                            </div>
+                          </div>
+                        </div>
+                    
+                      </div>     
+               </div>
+            </div>
+            <div class="col-md-8">
+                <div class="member-seller-product">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="search-form-1 text-center ">
+                                <form action="" method="post" class="d-flex search-btn">
+                                  <input type="search" autocomplete="off" aria-label="search input" class="search-input" placeholder="ما الذي تبحث عنه؟">
+                                  <div class="search-btn">
+                                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                  </div>
+                                </form>
+                           </div>
+                       </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="member-product-title">
+                            <h3>جميع الإعلانات من RANGPUR MOBILE (1-25 من 621)</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="com-md-12">
+                        <div class="products">
+                            <a href="single-post.html">
+                                <div class="row products-content">
+                                    <div class="col-md-4 col-4 product-img">
+                                       <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-8 col-8 product-details p-0">
+                                        <h2>بيع__1000GB / 120GB__ شاشة سامسونج 19 بوصة LED</h2>
+                                        <div class="badge-member d-flex">
+                                            <div class="badge-member-1">
+                                                <i class="fa-solid fa-star"></i>
+                                                <span>Member</span>
+                                            </div>
+                                            <div class="badge-seller-1">
+                                                <i class="fa-solid fa-user-shield"></i>
+                                                <span>Verified seller</span>
+                                            </div>
+                                        </div>
+                                        <p class="mt-2">رانجبور ، أجهزة كمبيوتر سطح المكتب</p>
+                                        <span>Tk 25000</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="products">
+                          <a href="single-post.html">
+                              <div class="row products-content">
+                                  <div class="col-md-4 col-4 product-img">
+                                     <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                                  </div>
+                                  <div class="col-md-8 col-8 product-details p-0">
+                                      <h2>بيع فلاش / 8 جيجا ر __ شاشة سامسونج 19 بوصة LED</h2>
+                                      <div class="badge-member d-flex">
+                                          <div class="badge-member-1">
+                                              <i class="fa-solid fa-star"></i>
+                                              <span>Member</span>
+                                          </div>
+                                          <div class="badge-seller-1">
+                                              <i class="fa-solid fa-user-shield"></i>
+                                              <span>Verified seller</span>
+                                          </div>
+                                      </div>
+                                      <p class="mt-2">رانجبور ، أجهزة كمبيوتر سطح المكتب</p>
+                                      <span>Tk 25000</span>
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="products">
+                        <a href="single-post.html">
+                            <div class="row products-content">
+                                <div class="col-md-4 col-4 product-img">
+                                   <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-md-8 col-8 product-details p-0">
+                                    <h2>__1000GB / 120GB__ شاشة سامسونج 19 بوصة LED</h2>
+                                    <div class="badge-member d-flex">
+                                        <div class="badge-member-1">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span>Member</span>
+                                        </div>
+                                        <div class="badge-seller-1">
+                                            <i class="fa-solid fa-user-shield"></i>
+                                            <span>Verified seller</span>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2">رانجبور ، أجهزة كمبيوتر سطح المكتب</p>
+                                    <span>Tk 25000</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="products">
+                      <a href="single-post.html">
+                          <div class="row products-content">
+                              <div class="col-md-4 col-4 product-img">
+                                 <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                              </div>
+                              <div class="col-md-8 col-8 product-details p-0">
+                                  <h2> / 120GB__ شاشة سامسونج 19 بوصة LED</h2>
+                                  <div class="badge-member d-flex">
+                                      <div class="badge-member-1">
+                                          <i class="fa-solid fa-star"></i>
+                                          <span>Member</span>
+                                      </div>
+                                      <div class="badge-seller-1">
+                                          <i class="fa-solid fa-user-shield"></i>
+                                          <span>Verified seller</span>
+                                      </div>
+                                  </div>
+                                  <p class="mt-2">رانجبور ، أجهزة كمبيوتر سطح المكتب</p>
+                                  <span>Tk 25000</span>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="products">
+                    <a href="single-post.html">
+                        <div class="row products-content">
+                            <div class="col-md-4 col-4 product-img">
+                               <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-md-8 col-8 product-details p-0">
+                                <h2>بيع فلاش / 8 جيجا رام Core شاشة سامسونج 19 بوصة LED</h2>
+                                <div class="badge-member d-flex">
+                                    <div class="badge-member-1">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span>Member</span>
+                                    </div>
+                                    <div class="badge-seller-1">
+                                        <i class="fa-solid fa-user-shield"></i>
+                                        <span>Verified seller</span>
+                                    </div>
+                                </div>
+                                <p class="mt-2">رانجبور ، أجهزة كمبيوتر سطح المكتب</p>
+                                <span>Tk 25000</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="products">
+                  <a href="single-post.html">
+                      <div class="row products-content">
+                          <div class="col-md-4 col-4 product-img">
+                             <img src="assets/images/product-1.webp" alt="" class="img-fluid">
+                          </div>
+                          <div class="col-md-8 col-8 product-details p-0">
+                              <h2>بيع فلاش / 8 جيجا رام شاشة سامسونج 19 بوصة LED</h2>
+                              <div class="badge-member d-flex">
+                                  <div class="badge-member-1">
+                                      <i class="fa-solid fa-star"></i>
+                                      <span>Member</span>
+                                  </div>
+                                  <div class="badge-seller-1">
+                                      <i class="fa-solid fa-user-shield"></i>
+                                      <span>Verified seller</span>
+                                  </div>
+                              </div>
+                              <p class="mt-2">رانجبور ، أجهزة كمبيوتر سطح المكتب</p>
+                              <span>Tk 25000</span>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
+    <!-- member section end from here -->
+
+  <!-- footer section code start from here -->
+  <footer class="footer">
+    <div class="container">
+     <div class="row line">
+       <div class="col-md-4 footer-1">
+         <h2>قم بتنزيل تطبيقنا</h2>
+           <div class="footer-1-img d-flex">
+             <a href="#">
+               <img src="assets/images/google.png" alt="">
+             </a>
+             <a href="#">
+               <img src="assets/images/apple.png" alt="">
+             </a>
+           </div>
+           <div class="social">
+             <h2 class="pt-3">متصل مع</h2>
+             <a href="#"><i class="fa-brands fa-square-facebook"></i>اعجب بنا على الفيسبوك</a>
+           </div>
+           <div>
+             <h2 class="pt-3">دولة أخرى</h2>
+             <a href="#"><p>Srilanka</p></a>
+           </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>المزيد من بيكروي</h2>
+           <ul class="content1">
+             <li><a href="#">بيع سريع</a></li>
+             <li><a href="#">عضوية</a></li>
+             <li><a href="#">إعلانات البانر</a></li>
+             <li><a href="#">الترقيات الإعلانية</a></li>
+             <li><a href="#">حلول التوظيف</a></li>
+             <li><a href="#">دليل الدراجات</a></li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>ساعد لدعم</h2>
+           <ul class="content1">
+             <li><a href="#">التعليمات</a></li>
+             <li><a href="#">ابق آمنًا</a></li>
+             <li><a href="#">اتصل بنا</a></li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>اتبع بيكروي</h2>
+           <ul class="content1">
+             <li><a href="#">مدونة</a></li>
+             <li><a href="#">فيسبوك</a></li>
+             <li><a href="#">تويتر</a></li>
+             <li><a href="#">الترقيات الإعلانية</a></li>
+             <li><a href="#">موقع YouTube</a></li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>حول بكروي </h2>
+           <ul class="content1">
+             <li><a href="#">معلومات عنا</a></li>
+             <li><a href="#">وظائف</a></li>
+             <li><a href="#">الأحكام والشروط</a></li>
+             <li><a href="#">سياسة الخصوصية</a></li>
+             <li><a href="#">خريطة الموقع</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-12 pt-2">
+         جميع الحقوق محفوظة حقوق التأليف والنشر &copy; <a href="https://nujum.dev/" target="_blank">نجوم لتقنية المعلومات</a> 
+       </div>
+     </div>
+    </div>
+ </footer>
+ <!-- footer section code end from here -->
+ 
+     
+ 
+ 
+<script src="assets/js/bootstrap.bundle.js"></script>
+<!-- javascript -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
+<!-- for mobile nav -->
+<!-- <script src="assets/js/jquery-3.3.1.min.js"></script> -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+
+<!-- main js -->
+<script src="assets/js/main.js"></script>
+ <!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+ 
+     <script>
+       const phoneInputField = document.querySelector("#phone");
+       const phoneInput = window.intlTelInput(phoneInputField, {
+         utilsScript:
+           "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+       });
+     </script>
+
+     <!-- owl carousel -->
+<script>
+    $('.owl-carousel').owlCarousel({
+          loop:false,
+          margin:10,
+          responsiveClass:true,
+          margin:10,
+          autoplay:false,
+          autoplayTimeout:3000,
+          autoplayHoverPause:true,
+          responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            1000:{
+                items:2,
+                nav:true,
+                loop:false
+            }
+          }
+          })
+   </script>
+
+   <!-- mode switcher -->
+   <script>
+    var icon =document.getElementById("icon");
+    icon.onclick =function(){
+      document.body.classList.toggle("dark-theme");
+      if(document.body.classList.contains("dark-theme")){
+        icon.src ="assets/images/sun.png";
+        body.style.transition = '2s';
+      }else{
+        icon.src ="assets/images/moon.png";
+        body.style.transition = '2s';
+      }
+    }
+  </script>
+ </body>
+ </html>

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NujumApp</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- mobile- nav -->
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.min.css" integrity="sha512-Ja1oxinMmERBeokXx+nbQVVXeNX771tnUSWWOK4mGIbDAvMrWcRsiteRyTP2rgdmF8bwjLdEJADIwdMXQA5ccg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+
+
+  </head>
+<body>
+  <!-- header section -->
+<section class="top-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="site-logo">
+            <a href="index.html" class="font-weight-bold text-white">
+              <img src="assets/images/logo-nujum.png" class="img-fluid">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a class="nav-link active" aria-current="page" href="#">جميع الاعلانات</a>
+              </li>
+              <li class="nav-item nav-swithcher px-2">
+                <a class="nav-link active" aria-current="page" href="#">English</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a class="nav-link active chat" aria-current="page" href="#"><i class="fa-solid fa-comments"></i>محادثة</a>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn login" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa-solid fa-user"></i>تسجيل الدخول</button>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="post.html">
+                  <button type="button" class="btn btn-color">انشر إعلانك</button>
+                </a>
+              </li>
+            </ul>
+            <img src="assets/images/moon.png" alt="" id="icon">
+            
+          </div>
+        </div>
+      </nav>
+
+      <!-- ======modal-login=========== -->
+      <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">تسجيل الدخول</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="left-login">
+                    <h1>مرحبا بكم في بيكروي</h1>
+                    <div class="login-info">تسجيل الدخول لإدارة حسابك.</div>
+                    <ul class="cards">
+                      <li class="d-flex">
+                        <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+                        <p>ابدأ في نشر الإعلانات الخاصة بك.</p>
+                      </li>
+                      <li class="d-flex">
+                        <img src="assets/images/magnifying-glass.svg" alt="" style="height: 30px; width: 30px;">
+                        <p>اجعل الإعلانات مفضلة واعرضها لاحقًا ..</p>
+                      </li>
+                      <li class="d-flex">
+                        <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+                        <p>عرض وإدارة إعلاناتك على راحتك.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- ---login form------ -->
+                <div class="col-md-6">
+                  <form id="login" onsubmit="process(event)">
+                    <p>أدخل رقم هاتفك:</p>
+                    <input id="phone" type="tel" name="phone"  class="form-control" style="width: 142%;"/>
+                    <input type="submit" class="btn btn-success form-control mt-3" value="Continue" />
+                  </form>
+                  <div class="extra">أو</div>
+                  <div class="social">
+                    <a href="#" class="form-control d-flex google">
+                      <img src="assets/images/google.svg" alt="" style="height: 30px; width: 30px;">
+                      <h1>تواصل مع جوجل</h1>
+                    </a>
+                    <a href="#" class="form-control d-flex facebook">
+                      <img src="assets/images/facebook.svg" alt="" style="height: 30px; width: 30px;">
+                      <h1>تواصل مع الفيسبوك</h1>
+                    </a>
+                    <a href="#" class="form-control d-flex email">
+                      <img src="assets/images/message.svg" alt="" style="height: 30px; width: 30px;">
+                      <h1>تواصل مع البريد الإلكتروني</h1>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!------------------------------------------ modal end--------------------------------- -->
+      <div class="search-btn pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <button class="button"><i class="fa-solid fa-location-dot mx-2"></i>كامل سعودية</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-12 col-lg-12 col-sm-12 col-xl-8 offset-2">
+              <div class="search-form text-center">
+                <form action="" method="post" class="d-flex search-btn">
+                  <input type="search" autocomplete="off" aria-label="search input" class="search-input" placeholder="ما الذي تبحث عنه؟">
+                  <div class="search-btn">
+                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+
+
+
+<!--Mobile nav add section start  -->
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+
+    <section class="site-navbar site-navbar-target py-2" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-1">
+            <span class="d-inline-block d-lg-block"><a href="#" class="text-black site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
+
+            <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li class="active"><a href="all-category.html" class="nav-link nave-one"><i class="fa-solid fa-tag"></i>جميع الإعلانات في نجوم</a></li>
+                <li><a href="login.html" class="nav-link"><i class="fa-solid fa-user"></i>تسجيل الدخول</a></li>
+                <li><a href="" class="nav-link nave-two"><i class="fa-solid fa-gear"></i>إعدادات</a></li>
+                <li><a href="" class="nav-link"><i class="fa-solid fa-shield-halved"></i>ابق آمنًا</a></li>
+                <li><a href="" class="nav-link"><i class="fa-solid fa-circle-question"></i>التعليمات</a></li>
+                <li><a href="" class="nav-link"><i class="fa-solid fa-coins"></i>كيف تبيع بسرعة</a></li>
+                <li><a href="" class="nav-link nave-three"><i class="fa-solid fa-ellipsis"></i>أكثر</a></li>
+                <li class="nav-item nav-swithcher-1 text-center px-2">
+                  <a class="nav-link active" aria-current="page" href="#">English</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-8">
+            <div class="site-logo">
+              <a href="index.html" class="font-weight-bold text-white">
+                <img src="assets/images/logo-nujum.png" class="img-fluid">
+              </a>
+            </div>
+
+            
+          </div>
+          <div class="col-3">
+            <div class="chat-login-icon text-right">
+              <i class="fa-solid fa-comments"></i>
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+      
+
+      <div class="search-btn pb-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <button class="button"><i class="fa-solid fa-location-dot mx-2"></i>كامل سعودية</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-12 col-lg-12 col-sm-12 col-xl-8 offset-2">
+              <div class="search-form text-center">
+                <form action="" method="post" class="d-flex search-btn">
+                  <input type="search" autocomplete="off" aria-label="search input" class="search-input" placeholder="ما الذي تبحث عنه؟">
+                  <div class="search-btn">
+                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+<!--Mobile nav add section end  -->
+
+
+
+<!-- mobile category code start here -->
+<section class="mobile-category pt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cat-titile">
+          <h6>تصفح العناصر حسب الفئة</h6>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <div class="cat-item">
+              <a href="all-category.html" class="cat-content-link">  
+                    <div class="cat-icon">
+                       <img src="assets/images/007-signal.svg" alt="" class="img-fluid" style="width: 100%;">
+                    </div>
+                    <div class="cat-icon-content">
+                       <p>جوالات</p>
+                       <span>90524 إعلان</span>
+                    </div>  
+              </a>
+            </div>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/monitor.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>إلكترونيات</p>
+                     <span>72410 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/car(1).svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>عربة</p>
+                     <span>32.524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/house.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>المعيشة المنزلية</p>
+                     <span>18135 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/pet-hotel-sign.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>الحيوانات الأليفة الحيوانات</p>
+                     <span>15،524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/house.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>ملكية</p>
+                     <span>16.524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/dress.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>الموضة والجمال للمرأة</p>
+                     <span>91524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/men.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>أزياء الرجال والعناية بهم</p>
+                     <span>91524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/ball.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>الهوايات والرياضة والاطفال</p>
+                     <span>5،524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/business.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>الأعمال التجارية والصناعة</p>
+                     <span>9524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/essential.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>الضروريات</p>
+                     <span>50524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/education.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>تعليم</p>
+                     <span>20.524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/jobs.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>وظائف</p>
+                     <span>60524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/service.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>خدمات</p>
+                     <span>20.524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/agriculture.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>زراعة</p>
+                     <span>5،524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+          <div class="cat-item">
+            <a href="all-category.html" class="cat-content-link">
+                  <div class="cat-icon">
+                     <img src="assets/images/overseas.svg" alt="" class="img-fluid" style="width: 100%;">
+                  </div>
+                  <div class="cat-icon-content">
+                     <p>وظائف في الخارج</p>
+                     <span>50524 إعلان</span>
+                  </div>
+            </a>
+          </div>
+
+
+
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- mobile category code start here -->
+
+
+
+<!-- category section code start from here -->
+<section class="category">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cat-titile">
+          <h6>تصفح العناصر حسب الفئة</h6>
+        </div>
+      </div>
+    </div>
+    <div class="row p-4">
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/007-signal.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>جوالات</p>
+                   <span>90524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/monitor.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>إلكترونيات</p>
+                   <span>72410 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/car(1).svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>عربة</p>
+                   <span>32.524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/house.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>المعيشة المنزلية</p>
+                   <span>18135 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/pet-hotel-sign.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>الحيوانات الأليفة الحيوانات</p>
+                   <span>15،524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/house.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>ملكية</p>
+                   <span>16.524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/dress.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>الموضة والجمال للمرأة</p>
+                   <span>91524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/men.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>أزياء الرجال والعناية بهم</p>
+                   <span>91524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/ball.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>الهوايات والرياضة والاطفال</p>
+                   <span>5،524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/business.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>الأعمال التجارية والصناعة</p>
+                   <span>9524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/essential.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>الضروريات</p>
+                   <span>50524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/education.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>تعليم</p>
+                   <span>20.524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/jobs.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>وظائف</p>
+                   <span>60524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/service.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>خدمات</p>
+                   <span>20.524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/agriculture.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>زراعة</p>
+                   <span>5،524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-sm-4 col-4 pb-5">
+        <div class="cat-item">
+          <a href="all-category.html" class="cat-content-link">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="cat-icon">
+                   <img src="assets/images/overseas.svg" alt="" class="img-fluid" style="width: 100%;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="cat-icon-content">
+                   <p>وظائف في الخارج</p>
+                   <span>50524 إعلان</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- category section code end from here -->
+
+<!-- start money making section code start from here -->
+<section class="job">
+  <div class="container">
+    <div class="jobs-title">
+      <div class="row">
+        <div class="col-md-6 col-12 jobs-title-1">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="jobs-img">
+                  <img src="assets/images/money-bag.svg" alt="" class="img-fluid" style="width: 90%;">
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="money">
+                  <h2>ابدأ في جني الأموال!</h2>
+                  <p>هل لديك شيء للبيع؟</br>
+                    انشر إعلانك الأول وابدأ في جني الأموال!</p>
+                    <a href="post.html"><button class="btn btn-color"><i class="fa-solid fa-plus"></i>أضف إضافتك مجانا</button></a>
+
+                </div>
+              </div>
+            </div>
+            
+        </div>
+        <div class="col-md-6 col-12 jobs-title-2">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="jobs">
+                <h2>وظائف بيكروي</h2>
+                <p>هل تبحث عن توظيف أو توظيف في بنغلاديش؟ </br>
+                  احصل على 800 ألف + سيرة ذاتية أو تصفح أكثر من 800 وظيفة شاغرة!</p>
+                  <a href=""><button class="btn btn-color">استكشاف المزيد<i class="fa-solid fa-angle-right px-2"></i></button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</section>
+
+<!-- start making section code start from here -->
+<!-- quick links section start from here -->
+<section class="links pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="fs">روابط سريعة</h2>
+      </div>
+    </div>
+    <div class="row pt-4">
+      <div class="col-md-3">
+        <div class="link-all p-3">
+          <h3>72439 إعلان في الإلكترونيات</h3>
+          <a href="#">
+            <span>أجهزة الكمبيوتر المكتبية</span>
+          </a>
+          <a href="#">
+            <span>أجهزة الكمبيوتر المحمولة</span>
+          </a>
+          <a href="#">
+            <span>التلفزيونات</span>
+          </a>
+          <a href="#">
+            <span>الكاميرات وملحقاتها</span>
+          </a>
+          <a href="#">
+            <span>أنظمة الصوت والصوت</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="link-all p-3">
+          <h3>15،635 إعلان في الممتلكات</h3>
+          <a href="#">
+            <span>شقق للبيع</span>
+          </a>
+          <a href="#">
+            <span>أرض</span>
+          </a>
+          <a href="#">
+            <span>تأجير شقة</span>
+          </a>
+          <a href="#">
+            <span>تأجير العقارات التجارية</span>
+          </a>
+          <a href="#">
+            <span>تأجير الغرف</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="link-all p-3">
+          <h3>1،688 إعلان في وظائف</h3>
+          <a href="#">
+            <span>المبيعات التنفيذي</span>
+          </a>
+          <a href="#">
+            <span>المبيعات التنفيذي</span>
+          </a>
+          <a href="#">
+            <span>مشرف</span>
+          </a>
+          <a href="#">
+            <span>متسابق التوصيل</span>
+          </a>
+          <a href="#">
+            <span>وظيفة خدمة العملاء</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="link-all p-3">
+          <h3>32313 إعلان في المركبات</h3>
+          <a href="#">
+            <span>سيارة</span>
+          </a>
+          <a href="#">
+            <span>دراجات نارية</span>
+          </a>
+          <a href="#">
+            <span>شاحنة</span>
+          </a>
+          <a href="#">
+            <span>دراجات</span>
+          </a>
+          <a href="#">
+            <span>قطع غيار واكسسوارات السيارات</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- quick links section start from here -->
+
+
+<!-- accordian section start -->
+<section class="accordians">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="accor-title">
+          <h1>حول بيكروي ، أكبر سوق في بنغلاديش!</h1>
+          <p>Bikroy عبارة عن منصة يمكنك من خلالها شراء وبيع كل شيء تقريبًا! نحن نساعد الأشخاص في شراء وبيع المركبات ، والعثور على العقارات ، والحصول على وظائف أو تعيين موظفين ، و </br> شراء وبيع الهواتف المحمولة ، وشراء المنتجات الإلكترونية ، وغير ذلك الكثير. مع أكثر من 50 فئة ، تم تصميم حلولنا لتكون آمنة وذكية وملائمة لعملائنا.</p>
+        </div>
+<!-- accordian -->
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                أظهر المزيد
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <h4>شراء أو بيع أو إيجار أو العثور على وظائف في بنغلاديش</h4>
+                <p>كل شهر ، يستخدم مئات الملايين من الأشخاص Bikroy للعثور على الهواتف المحمولة والآلات الموسيقية والسيارات والمنازل والوظائف والمزيد وبيعها من خلال الإعلانات المبوبة. لبيع عناصر جديدة أو بيع العناصر المستعملة بسرعة ، تقدم بيكروي ميزات ترويج الإعلان. </p>
+                <p>لدى بيكروي مجموعة واسعة من السلع الجديدة والمستعملة ، مما يسهل على المستخدمين شراء سلع جديدة بسرعة أو شراء سلع مستعملة في الموقع الذي يرغبون فيه. للشراء عبر الإنترنت ، يمكن للمستخدمين الوصول بسهولة إلى المنتجات التي يرغبون فيها من خلال خيارات التصفية.</p>
+                <p>بالنسبة للشركات ، قدم بيكروي خدمة "العضوية" التي تساعدهم على توسيع أعمالهم عبر الإنترنت. سيحصل الأعضاء على متجرهم الافتراضي مع عنوان URL لـ Bikroy مع عروض ترويجية مجانية لبضائعهم. مع فئات العضوية المختلفة ، يمكن للشركات أن تزدهر كأعضاء معتمدين وتجار معتمدين.</p>
+                <p>مع ملايين الزوار الفريدين شهريًا ، وآلاف المشترين المهتمين ، وآلاف التجار النشطين على منصتنا ، تعد بيكروي أكبر سوق في بنغلاديش.</p>
+
+                <h4>فوائد التداول في بكروي</h4>
+                <p>في بيكروي ، نجعل من السهل جدًا توصيل الأشخاص لشراء أو بيع أو تأجير السلع والخدمات مثل المواقع المصنفة الأخرى.</p>
+                <ul>
+                  <li><p>تجربة سريعة وسهلة: تجربة بيع وشراء متنقلة في بنغلاديش وهي أبسط وأسرع وأسهل. تسوق وبيع أثناء التنقل واحصل على المنتجات التي تريدها ببضع نقرات.</p></li>
+                  <li><p>تجربة سريعة وسهلة: تجربة بيع وشراء متنقلة في بنغلاديش وهي أبسط وأسرع وأسهل. تسوق وبيع أثناء التنقل واحصل على المنتجات التي تريدها ببضع نقرات</p></li>
+
+                </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- accordian section end -->
+
+<!-- footer section code start from here -->
+<footer class="footer">
+   <div class="container">
+    <div class="row line">
+      <div class="col-md-4 footer-1">
+        <h2>قم بتنزيل تطبيقنا</h2>
+          <div class="footer-1-img d-flex">
+            <a href="#">
+              <img src="assets/images/google.png" alt="">
+            </a>
+            <a href="#">
+              <img src="assets/images/apple.png" alt="">
+            </a>
+          </div>
+          <div class="social">
+            <h2 class="pt-3">متصل مع</h2>
+            <a href="#"><i class="fa-brands fa-square-facebook"></i>اعجب بنا على الفيسبوك</a>
+          </div>
+          <div>
+            <h2 class="pt-3">دولة أخرى</h2>
+            <a href="#"><p>Srilanka</p></a>
+          </div>
+      </div>
+      <div class="col-md-2">
+        <div class="more">
+          <h2>المزيد من بيكروي</h2>
+          <ul class="content1">
+            <li><a href="#">بيع سريع</a></li>
+            <li><a href="#">عضوية</a></li>
+            <li><a href="#">إعلانات البانر</a></li>
+            <li><a href="#">الترقيات الإعلانية</a></li>
+            <li><a href="#">حلول التوظيف</a></li>
+            <li><a href="#">دليل الدراجات</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="more">
+          <h2>ساعد لدعم</h2>
+          <ul class="content1">
+            <li><a href="#">التعليمات</a></li>
+            <li><a href="#">ابق آمنًا</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="more">
+          <h2>اتبع بيكروي</h2>
+          <ul class="content1">
+            <li><a href="#">مدونة</a></li>
+            <li><a href="#">فيسبوك</a></li>
+            <li><a href="#">تويتر</a></li>
+            <li><a href="#">الترقيات الإعلانية</a></li>
+            <li><a href="#">موقع YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="more">
+          <h2>حول بكروي </h2>
+          <ul class="content1">
+            <li><a href="#">معلومات عنا</a></li>
+            <li><a href="#">وظائف</a></li>
+            <li><a href="#">الأحكام والشروط</a></li>
+            <li><a href="#">سياسة الخصوصية</a></li>
+            <li><a href="#">خريطة الموقع</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pt-2">
+        جميع الحقوق محفوظة حقوق التأليف والنشر &copy; <a href="https://nujum.dev/" target="_blank">نجوم لتقنية المعلومات</a> 
+      </div>
+    </div>
+   </div>
+</footer>
+<!-- footer section code end from here -->
+
+    
+
+
+<script src="assets/js/bootstrap.bundle.js"></script>
+
+
+    <!-- javascript -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
+
+<!-- for mobile nav -->
+<!-- <script src="assets/js/jquery-3.3.1.min.js"></script> -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+
+<!-- main js -->
+<script src="assets/js/main.js"></script>
+
+<!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+
+    <script>
+      const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+    </script>
+   <!-- mode switcher -->
+    <script>
+      var icon =document.getElementById("icon");
+      icon.onclick =function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+          icon.src ="assets/images/sun.png";
+          body.style.transition = '2s';
+        }else{
+          icon.src ="assets/images/moon.png";
+          body.style.transition = '2s';
+        }
+      }
+    </script>
+
+    <script>
+      $('.owl-carousel').owlCarousel({
+        loop:false,
+        margin:10,
+        responsiveClass:true,
+        margin:10,
+        autoplay:false,
+        autoplayTimeout:6000,
+        autoplayHoverPause:true,
+        responsive:{
+          0:{
+              items:2,
+              nav:false,
+              autoplay:false
+              
+          },
+          300:{
+              items:3,
+              nav:false,
+              autoplay:false
+              
+          },
+          600:{
+              items:6,
+              nav:false
+          },
+          1000:{
+              items:8,
+              nav:false,
+              loop:false
+          }
+        }
+        });
+ </script>
+</body>
+</html>

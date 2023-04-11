@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single post</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- mobile- nav -->
+   <link rel="stylesheet" href="fonts/icomoon/style.css"> 
+   <!-- Owl Stylesheets -->
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+   <!-- swiper -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.min.css" integrity="sha512-Ja1oxinMmERBeokXx+nbQVVXeNX771tnUSWWOK4mGIbDAvMrWcRsiteRyTP2rgdmF8bwjLdEJADIwdMXQA5ccg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+</head>
+
+<body>
+  <section class="top-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="site-logo">
+            <a href="index.html" class="font-weight-bold text-white">
+              <img src="assets/images/logo-nujum.png" class="img-fluid">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a class="nav-link active" aria-current="page" href="#">جميع الاعلانات</a>
+              </li>
+              <li class="nav-item nav-swithcher px-2">
+                <a class="nav-link active" aria-current="page" href="#">English</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a class="nav-link active chat" aria-current="page" href="#"><i class="fa-solid fa-comments"></i>محادثة</a>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn login" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa-solid fa-user"></i>تسجيل الدخول</button>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">
+                  <button type="button" class="btn btn-color">انشر إعلانك</button>
+                </a>
+              </li>
+              
+            </ul>
+            <img src="assets/images/moon.png" alt="" id="icon">
+            
+          </div>
+        </div>
+      </nav>
+  </section>
+
+<!-- ======modal-login=========== -->
+<div class="modal modal-lg fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">تسجيل الدخول</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-login">
+                <h1>مرحبا بكم في بيكروي</h1>
+                <div class="login-info">تسجيل الدخول لإدارة حسابك.</div>
+                <ul class="cards">
+                  <li class="d-flex">
+                    <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+                    <p>ابدأ في نشر الإعلانات الخاصة بك.</p>
+                  </li>
+                  <li class="d-flex">
+                    <img src="assets/images/magnifying-glass.svg" alt="" style="height: 30px; width: 30px;">
+                    <p>اجعل الإعلانات مفضلة واعرضها لاحقًا ..</p>
+                  </li>
+                  <li class="d-flex">
+                    <img src="assets/images/wallet.svg" alt="" style="height: 30px; width: 30px;">
+                    <p>عرض وإدارة إعلاناتك على راحتك.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- ---login form------ -->
+            <div class="col-md-6">
+              <form id="login" onsubmit="process(event)">
+                <p>أدخل رقم هاتفك:</p>
+                <input id="phone" type="tel" name="phone"  class="form-control" style="width: 142%;"/>
+                <input type="submit" class="btn btn-success form-control mt-3" value="Continue" />
+              </form>
+              <div class="extra">أو</div>
+              <div class="social">
+                <a href="#" class="form-control d-flex google">
+                  <img src="assets/images/google.svg" alt="" style="height: 30px; width: 30px;">
+                  <h1>تواصل مع جوجل</h1>
+                </a>
+                <a href="#" class="form-control d-flex facebook">
+                  <img src="assets/images/facebook.svg" alt="" style="height: 30px; width: 30px;">
+                  <h1>تواصل مع الفيسبوك</h1>
+                </a>
+                <a href="#" class="form-control d-flex email">
+                  <img src="assets/images/message.svg" alt="" style="height: 30px; width: 30px;">
+                  <h1>تواصل مع البريد الإلكتروني</h1>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- mobile nav section start -->
+<div class="site-mobile-menu site-navbar-target">
+  <div class="site-mobile-menu-header">
+    <div class="site-mobile-menu-close mt-3">
+      <span class="icon-close2 js-menu-toggle"></span>
+    </div>
+  </div>
+  <div class="site-mobile-menu-body"></div>
+</div>
+
+<section class="site-navbar site-navbar-target py-2" role="banner">
+  <div class="container">
+    <div class="row align-items-center position-relative">
+
+      <div class="col-1">
+        <span class="d-inline-block d-lg-block"><a href="#" class="text-black site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
+
+        <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav ml-auto ">
+            <li class="active"><a href="all-category.html" class="nav-link nave-one"><i class="fa-solid fa-tag"></i>جميع الإعلانات في نجوم</a></li>
+            <li><a href="login.html" class="nav-link"><i class="fa-solid fa-user"></i>تسجيل الدخول</a></li>
+            <li><a href="" class="nav-link nave-two"><i class="fa-solid fa-gear"></i>إعدادات</a></li>
+            <li><a href="" class="nav-link"><i class="fa-solid fa-shield-halved"></i>ابق آمنًا</a></li>
+            <li><a href="" class="nav-link"><i class="fa-solid fa-circle-question"></i>التعليمات</a></li>
+            <li><a href="" class="nav-link"><i class="fa-solid fa-coins"></i>كيف تبيع بسرعة</a></li>
+            <li><a href="" class="nav-link nave-three"><i class="fa-solid fa-ellipsis"></i>أكثر</a></li>
+            <li class="nav-item nav-swithcher-1 text-center px-2">
+              <a class="nav-link active" aria-current="page" href="#">English</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-8">
+        <div class="site-logo">
+          <a href="index.html" class="font-weight-bold text-white">
+            <img src="assets/images/logo-nujum.png" class="img-fluid">
+          </a>
+        </div>
+
+        
+      </div>
+      <div class="col-3">
+        <div class="chat-login-icon text-right">
+          <i class="fa-solid fa-comments"></i>
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+<!--Mobile nav add section end  -->     
+
+    <!-- single-post section start form here -->
+    <Section class="single-post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cate-all-serial">
+                        <ul class="d-flex">
+                            <li><a href="#">بيت<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#">كل الإعلانات<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#">متحرك<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#">تليفون محمول<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#">جوّالات هواوي<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#">نوفا 9<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#">نوفا 9 في دكا<i class="fa-solid fa-angle-right"></i></a><li>                   
+                            <li><a href="#">نوفا 9 في جولشان<i class="fa-solid fa-angle-right"></i></a></li> 
+                            <li><a href="#">Huawei Nova 9 SE 8 / 128GB (مستعمل)<i class="fa-solid fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3 bg-single shadow-lg">
+              <div class="col-md-8">
+                  <div class="single-post-details">
+                    <div class="single-post-title">
+                      <h1>هواوي واي 9 برايم 4/128 (مستعمل)</h1>
+                      <span>تاريخ النشر 03 أبريل 11:05 صباحًا</span>
+                      <a href="#">كيشوريجانج</a>
+                      <a href="#">مقاطعة دكا</a>
+                    </div>
+
+                    <div class="product-swiper-slider">
+                      <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
+                      thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
+                      <swiper-slide>
+                        <img src="assets/images/img-1.jpg" class="img-fluid"  style="height: 400px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-4.jpg" class="img-fluid"  style="height: 400px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-2.jpg" class="img-fluid"  style="height: 400px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-3.jpg" class="img-fluid"  style="height: 400px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-4.jpg" class="img-fluid"  style="height: 400px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-1.jpg" class="img-fluid"  style="height: 400px; width: 100%;"/>
+                      </swiper-slide>
+                      
+                    </swiper-container>
+                  
+                    <swiper-container class="mySwiper2 pt-2 mobile-swipper" loop="true" space-between="10" slides-per-view="4" free-mode="true"
+                      watch-slides-progress="true">
+                      <swiper-slide>
+                        <img src="assets/images/img-1.jpg" class="img-fluid"  style="height: 200px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-4.jpg" class="img-fluid"  style="height: 200px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-2.jpg" class="img-fluid"  style="height: 200px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-3.jpg" class="img-fluid"  style="height: 200px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-4.jpg" class="img-fluid"  style="height: 200px; width: 100%;"/>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <img src="assets/images/img-1.jpg" class="img-fluid"  style="height: 200px; width: 100%;"/>
+                      </swiper-slide>
+                    </swiper-container>
+                    </div>
+
+                    <div class="product-price d-flex">
+                      <h1>Tk 11,500</h1>
+                      <p>قابل للتفاوض</p>
+                    </div>
+                    <div class="details">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="details-all">
+                            <ul>
+                              <li>
+                                <p>حالة:</p>
+                                <span>مستخدم</span>
+                              </li>
+                              <li>
+                                <p>نموذج:</p>
+                                <span>Y9 Prime</span>
+                              </li>
+                              <li>
+                                <p>أصالة:</p>
+                                <span>أصلي</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="details-all">
+                            <ul>
+                              <li>
+                                <p>ماركة:</p>
+                                <span>هواوي</span>
+                              </li>
+                              <li>
+                                <p>الإصدار:</p>
+                                <span>4/128</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="features">
+                      <h3>سمات</h3>
+                      <p>4G ، ثنائي الشريحة ، بطاقة Micro SIM ، بطاقة SIM صغيرة ، منفذ USB من النوع C ، Android ، كاميرا مزدوجة ، فلاش LED مزدوج ، Bluetooth ، Wifi ، GPS ، مستشعر بصمات الأصابع</p>
+                    </div>
+                    <div class="description">
+                      <h3>وصف</h3>
+                      <p>4G ، ثنائي الشريحة ، بطاقة Micro SIM ، بطاقة SIM صغيرة ، منفذ USB من النوع C ، Android ، كاميرا مزدوجة ، فلاش LED مزدوج ، Bluetooth ، Wifi ، GPS ، مستشعر بصمات الأصابع</p>
+                    </div>
+                    <hr>
+
+                    <div class="promote-report d-flex pt-4 pb-4">
+                        <button type="button" class="btn btn-color"><i class="fa-solid fa-circle-arrow-up"></i>روّج لهذا الإعلان</button>
+                        <button type="button" class="btn btn-report"><i class="fa-solid fa-ban"></i>الإبلاغ عن هذا الإعلان</button>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="single-right">
+                  <div class="single-right-top pt-2">
+                    <button type="button">
+                      <span><i class="fa-solid fa-share-nodes"></i>يشارك</span>
+                    </button>
+                    <button type="button">
+                      <span><i class="fa-solid fa-star"></i>حفظ الإعلان</span>
+                    </button>
+                  </div>
+
+                  <div class="order-details">
+                    <ul>
+                      <li>
+                        <div class="user_name">للبيع <span>Newaz Ahmed</span></div>
+                      </li>
+                      <li>
+                        <div class="row call">
+                          <div class="col-md-2">
+                            <i class="fa-solid fa-square-phone-flip fa-shake"></i>
+                          </div>
+                          <div class="col-md-10 call-number">
+                            017xxxxxxxxxxxxxx
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chat d-flex">
+                          <div class="">
+                            <i class="fa-sharp fa-solid fa-comments"></i>
+                          </div>
+                          <div class="chat-single">
+                            Chat
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="safety-tips mt-4">
+                    <h3><i class="fa-solid fa-shield-halved"></i> نصائح للأمان</h3>
+                    <ul>
+                      <li>يجتمع في مكان آمن وعام</li>
+                      <li>لا تدفع مقدمًا</li>
+                      <li><a href="#">اطلع على جميع نصائح الأمان</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </Section>
+    
+    <!-- single post section end from here -->
+
+    <!-- releated products code start-->
+    <Section class="releated-slider p-4 rounded">
+      <div class="container bg-white">
+        <div class="row rounded">
+          <div class="col-md-12">
+            <div class="item-1-title">
+              <h3>إعلانات مماثلة</h3>
+            </div>
+            <hr>
+            <div class="owl-carousel owl-theme">
+              <div class="item">
+                <div class="item-1">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-1.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-1 mt-3">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-2.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item-1">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-1.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-1 mt-3">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-2.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item-1">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-1.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-1 mt-3">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-2.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item-1">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-1.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-1 mt-3">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/phone-2.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                      <h2>ابل ايفون 12 برو ماكس. (مستخدم)</h2>
+                      <p>قسم رانجبور ، الهواتف المحمولة</p>
+                      <span>Tk 85,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+        <!-- releated products code end-->
+
+        <section class="product-name p-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="ads-title">
+                  <h3>الهواتف النقالة الشعبية</h3>
+                </div>
+                <div class="ads-content">
+                  <ul>
+                    <li><a href="#">هواتف أبل في قسم رانجبور</a></li>
+                    <li><a href="#">هواتف سامسونج المحمولة في قسم رانجبور</a></li>
+                    <li><a href="#">جوّالات هواوي في قسم رانجبور</a></li>
+                    <li><a href="#">هواتف شاومي في قسم رانجبور</a></li>
+                    <li><a href="#">موبايلات سوني في قسم رانجبور</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="ads-title">
+                  <h3>تتجه الهواتف المحمولة</h3>
+                </div>
+                <div class="ads-content">
+                  <ul>
+                    <li><a href="#">هواتف نوكيا في قسم رانجبور</a></li>
+                    <li><a href="#">هواتف فيفو في قسم رانجبور</a></li>
+                    <li><a href="#">هواتف إل جي في قسم رانجبور</a></li>
+                    <li><a href="#">هواتف اوبو في قسم رانجبور</a></li>
+                    <li><a href="#">هواتف ون بلس في قسم رانجبور</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="ads-title">
+                  <h3>Apple iPhone 12 Pro حسب الموقع</h3>
+                </div>
+                <div class="ads-content">
+                  <ul>
+                    <li><a href="#">ابل ايفون 12 برو للبيع في دكا</a></li>
+                    <li><a href="#">Apple iPhone 12 Pro للبيع في محافظة دكا</a></li>
+                    <li><a href="#">Apple iPhone 12 Pro للبيع في Chattogram</a></li>
+                    <li><a href="#">Apple iPhone 12 Pro للبيع في قسم Chattogram</a></li>
+                    <li><a href="#">ابل ايفون 12 برو للبيع في رانجبور</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="ads-title">
+                  <h3>Apple iPhone 12 Pro حسب الحالة</h3>
+                </div>
+                <div class="ads-content">
+                  <ul>
+                    <li><a href="#">ابل ايفون 12 برو مستعمل للبيع</a></li>
+                    <li><a href="#">ابل ايفون 12 برو جديد للبيع</a></li>
+                    <li><a href="#">أجهزة الكمبيوتر المحمولة في بنغلاديش</a></li>
+                    <li><a href="#">تلفزيونات في بنغلاديش</a></li>
+                    <li><a href="#">مكيفات الهواء في بنغلاديش</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+
+
+  <!-- footer section code start from here -->
+  <footer class="footer">
+    <div class="container">
+     <div class="row line">
+       <div class="col-md-4 footer-1">
+         <h2>قم بتنزيل تطبيقنا</h2>
+           <div class="footer-1-img d-flex">
+             <a href="#">
+               <img src="assets/images/google.png" alt="">
+             </a>
+             <a href="#">
+               <img src="assets/images/apple.png" alt="">
+             </a>
+           </div>
+           <div class="social">
+             <h2 class="pt-3">متصل مع</h2>
+             <a href="#"><i class="fa-brands fa-square-facebook"></i>اعجب بنا على الفيسبوك</a>
+           </div>
+           <div>
+             <h2 class="pt-3">دولة أخرى</h2>
+             <a href="#"><p>Srilanka</p></a>
+           </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>المزيد من بيكروي</h2>
+           <ul class="content1">
+             <li><a href="#">بيع سريع</a></li>
+             <li><a href="#">عضوية</a></li>
+             <li><a href="#">إعلانات البانر</a></li>
+             <li><a href="#">الترقيات الإعلانية</a></li>
+             <li><a href="#">حلول التوظيف</a></li>
+             <li><a href="#">دليل الدراجات</a></li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>ساعد لدعم</h2>
+           <ul class="content1">
+             <li><a href="#">التعليمات</a></li>
+             <li><a href="#">ابق آمنًا</a></li>
+             <li><a href="#">اتصل بنا</a></li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>اتبع بيكروي</h2>
+           <ul class="content1">
+             <li><a href="#">مدونة</a></li>
+             <li><a href="#">فيسبوك</a></li>
+             <li><a href="#">تويتر</a></li>
+             <li><a href="#">الترقيات الإعلانية</a></li>
+             <li><a href="#">موقع YouTube</a></li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2">
+         <div class="more">
+           <h2>حول بكروي </h2>
+           <ul class="content1">
+             <li><a href="#">معلومات عنا</a></li>
+             <li><a href="#">وظائف</a></li>
+             <li><a href="#">الأحكام والشروط</a></li>
+             <li><a href="#">سياسة الخصوصية</a></li>
+             <li><a href="#">خريطة الموقع</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-12 pt-2">
+         جميع الحقوق محفوظة حقوق التأليف والنشر &copy; <a href="https://nujum.dev/" target="_blank">نجوم لتقنية المعلومات</a> 
+       </div>
+     </div>
+    </div>
+  </footer>
+ <!-- footer section code end from here -->
+ 
+     
+ 
+ 
+<script src="assets/js/bootstrap.bundle.js"></script>
+<!-- javascript -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
+<!-- for mobile nav -->
+<!-- <script src="assets/js/jquery-3.3.1.min.js"></script> -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+
+<!-- main js -->
+<script src="assets/js/main.js"></script>
+<!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+ 
+ 
+     <script>
+       const phoneInputField = document.querySelector("#phone");
+       const phoneInput = window.intlTelInput(phoneInputField, {
+         utilsScript:
+           "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+       });
+     </script>
+
+     <!-- owl carousel -->
+<script>
+  $('.owl-carousel').owlCarousel({
+        loop:false,
+        margin:10,
+        responsiveClass:true,
+        margin:10,
+        autoplay:false,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+          0:{
+              items:2,
+              nav:true
+          },
+          600:{
+              items:2,
+              nav:true
+          },
+          1000:{
+              items:2,
+              nav:true,
+              loop:false
+          }
+        }
+        })
+ </script>
+
+ <!-- mode switcher -->
+ <script>
+  var icon =document.getElementById("icon");
+  icon.onclick =function(){
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+      icon.src ="assets/images/sun.png";
+      body.style.transition = '2s';
+    }else{
+      icon.src ="assets/images/moon.png";
+      body.style.transition = '2s';
+    }
+  }
+</script>
+ </body>
+ </html>
